@@ -26,9 +26,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let tarea = tareas[indexPath.row]
         
         if tarea.importante {
-            cell.textLabel?.text = "🤨\(tarea.nombre)"
+            cell.textLabel?.text = "🤨\(tarea.nombre!)"
         }else{
-            cell.textLabel?.text = "😇\(tarea.nombre)"
+            cell.textLabel?.text = "😇\(tarea.nombre!)"
         }
         
         return cell
@@ -48,10 +48,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         
         //colocar el arreglo al cargar la vista
-        tareas = crearTareas()
+        //tareas = crearTareas()
     }
 //Definir el arreglo de contenido de datos, retorna un arreglo que contiene tareas
-    func crearTareas()->[Tarea]{
+    /*func crearTareas()->[Tarea]{
         let tarea1 = Tarea()
         tarea1.nombre = "Desarrollo de evaluacion"
         tarea1.importante = true
@@ -63,23 +63,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tarea3.importante = true
         
         return [tarea1, tarea2, tarea3]
+    }*/
+    func obtenerTareas() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+            tareas = try context.fetch(Tarea.fetchRequest()) as! [Tarea]
+        }catch{
+            print("Error al leer la entidad de CoreData")
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        obtenerTareas()
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "agregarSegue"{
+        /*if segue.identifier == "agregarSegue"{
             let siguienteVC = segue.destination as! ViewControllerCrearTarea
             siguienteVC.anteriorVC = self
-        }else if(segue.identifier == "tareaSeleccionadaSegue"){
+        }*/if(segue.identifier == "tareaSeleccionadaSegue"){
             let siguienteVC = segue.destination as! ViewControllerTareaCompletada
             siguienteVC.tarea  = sender as! Tarea
-            siguienteVC.anteriorVC = self
+            //siguienteVC.anteriorVC = self
         }
         
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexSeleccionado = indexPath.row
+        //indexSeleccionado = indexPath.row
         let tarea = tareas[indexPath.row]
         performSegue(withIdentifier: "tareaSeleccionadaSegue", sender: tarea)
     }

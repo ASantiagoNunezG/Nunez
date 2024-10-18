@@ -8,19 +8,25 @@
 import UIKit
 
 class ViewControllerCrearTarea: UIViewController {
-
+    
+    var anteriorVC = ViewController()
     @IBOutlet weak var txtNombreTarea: UITextField!
     
     @IBOutlet weak var swImportante: UISwitch!
+    
     @IBAction func agregar(_ sender: Any) {
-        let tarea = Tarea()
+        //let tarea = Tarea()
+        //se apertura uso de persistencia
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let tarea = Tarea(context: context)
         tarea.nombre = txtNombreTarea.text!
         tarea.importante = swImportante.isOn
-        anteriorVC.tareas.append(tarea)
-        anteriorVC.tableView.reloadData()
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        //anteriorVC.tareas.append(tarea)
+        //anteriorVC.tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
-    var anteriorVC = ViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

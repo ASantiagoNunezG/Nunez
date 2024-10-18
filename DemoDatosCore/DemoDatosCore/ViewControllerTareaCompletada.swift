@@ -17,15 +17,18 @@ class ViewControllerTareaCompletada: UIViewController {
         super.viewDidLoad()
 
         if tarea.importante {
-            tareaLabel.text = "🤨\(tarea.nombre)"
+            tareaLabel.text = "🤨\(tarea.nombre!)"
         }else{
-            tareaLabel.text = "😇\(tarea.nombre)"
+            tareaLabel.text = "😇\(tarea.nombre!)"
         }
     }
     
     @IBAction func completarTarea(_ sender: Any) {
-        anteriorVC.tareas.remove(at: anteriorVC.indexSeleccionado)
-        anteriorVC.tableView.reloadData()
+        //anteriorVC.tareas.remove(at: anteriorVC.indexSeleccionado)
+        //anteriorVC.tableView.reloadData()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(tarea)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController?.popViewController(animated: true)
     }
     
