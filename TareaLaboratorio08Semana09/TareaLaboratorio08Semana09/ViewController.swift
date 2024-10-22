@@ -69,6 +69,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-
+    
+    // Esto se ejecutará cuando vuelvas a la vista principal
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        buscarCursos() // Recargar los datos cuando vuelva a aparecer la vista
+        tablitaView.reloadData()
+    }
 }
 

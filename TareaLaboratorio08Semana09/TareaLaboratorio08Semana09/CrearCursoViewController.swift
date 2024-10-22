@@ -21,6 +21,7 @@ class CrearCursoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        
     }
     
     @IBAction func guardarCurso(_ sender: UIButton) {
@@ -54,9 +55,16 @@ class CrearCursoViewController: UIViewController {
             print("Curso guardado exitosamente")
             //Limpiar los campos de texto despues de guardar
             limpiarCampos()
+            
+            navigationController?.popViewController(animated: true)
+            // Al guardar, cierras la vista modal y vuelves a la principal
+            //dismiss(animated: true, completion: nil)
+            
         }catch{
             print("Error al guardar curso: \(error)")
         }
+        
+        
     }
     //Funcion para mostrar la alerta previamente definida
     func showAlert(_ message: String) {
@@ -72,6 +80,7 @@ class CrearCursoViewController: UIViewController {
         promedioPra.text = ""
         examenFi.text = ""
     }
+    
     /*
     // MARK: - Navigation
 
