@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28326CAB2CC765D200CF75B1 /* CrearCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28326CAA2CC765D200CF75B1 /* CrearCursoViewController.swift */; };
+		28326CAD2CC765F400CF75B1 /* EditarCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28326CAC2CC765F400CF75B1 /* EditarCursoViewController.swift */; };
 		FB24BD0B2CC31BEA00459C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24BD0A2CC31BEA00459C99 /* AppDelegate.swift */; };
 		FB24BD0D2CC31BEA00459C99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24BD0C2CC31BEA00459C99 /* SceneDelegate.swift */; };
 		FB24BD0F2CC31BEA00459C99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24BD0E2CC31BEA00459C99 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28326CAA2CC765D200CF75B1 /* CrearCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearCursoViewController.swift; sourceTree = "<group>"; };
+		28326CAC2CC765F400CF75B1 /* EditarCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarCursoViewController.swift; sourceTree = "<group>"; };
 		FB24BD072CC31BEA00459C99 /* TareaLaboratorio08Semana09.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TareaLaboratorio08Semana09.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB24BD0A2CC31BEA00459C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB24BD0C2CC31BEA00459C99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				FB24BD182CC31BEB00459C99 /* LaunchScreen.storyboard */,
 				FB24BD1B2CC31BEB00459C99 /* Info.plist */,
 				FB24BD132CC31BEA00459C99 /* TareaLaboratorio08Semana09.xcdatamodeld */,
+				28326CAA2CC765D200CF75B1 /* CrearCursoViewController.swift */,
+				28326CAC2CC765F400CF75B1 /* EditarCursoViewController.swift */,
 			);
 			path = TareaLaboratorio08Semana09;
 			sourceTree = "<group>";
@@ -141,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28326CAD2CC765F400CF75B1 /* EditarCursoViewController.swift in Sources */,
 				FB24BD152CC31BEA00459C99 /* TareaLaboratorio08Semana09.xcdatamodeld in Sources */,
 				FB24BD0F2CC31BEA00459C99 /* ViewController.swift in Sources */,
+				28326CAB2CC765D200CF75B1 /* CrearCursoViewController.swift in Sources */,
 				FB24BD0B2CC31BEA00459C99 /* AppDelegate.swift in Sources */,
 				FB24BD0D2CC31BEA00459C99 /* SceneDelegate.swift in Sources */,
 			);
