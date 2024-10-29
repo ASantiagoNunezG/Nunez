@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cliente" representedClassName="Cliente" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <attribute name="telefono" optional="YES" attributeType="String"/>
+        <relationship name="r_reserva" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reserva" inverseName="r_cliente" inverseEntity="Reserva"/>
+    </entity>
+    <entity name="Reserva" representedClassName="Reserva" syncable="YES" codeGenerationType="class">
+        <attribute name="cliente" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fecha_fin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fecha_inicio" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="vehiculo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="r_cliente" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cliente" inverseName="r_reserva" inverseEntity="Cliente"/>
+        <relationship name="r_vehiculo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehiculo" inverseName="r_reserva" inverseEntity="Vehiculo"/>
+    </entity>
+    <entity name="Vehiculo" representedClassName="Vehiculo" syncable="YES" codeGenerationType="class">
+        <attribute name="disponibilidad" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="marca" optional="YES" attributeType="String"/>
+        <attribute name="modelo" optional="YES" attributeType="String"/>
+        <attribute name="precio_dia" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="year" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="r_reserva" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reserva" inverseName="r_vehiculo" inverseEntity="Reserva"/>
+    </entity>
+</model>
