@@ -91,7 +91,7 @@ struct ContentView: View {
                         .foregroundColor(.white)) {
                         Picker("Plazo del crédito (meses):", selection: $plazoDelCredito) {
                             ForEach([12, 24, 36, 48, 60], id: \.self) { plazo in
-                                Text("\(plazo) meses").tag(plazo)
+                                Text("\(plazo) m").tag(plazo)
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
