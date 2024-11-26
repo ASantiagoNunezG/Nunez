@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBD152182CECF95B00F1A145 /* CompraVehiculosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD152172CECF95B00F1A145 /* CompraVehiculosApp.swift */; };
+		FBD1521A2CECF95B00F1A145 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD152192CECF95B00F1A145 /* ContentView.swift */; };
+		FBD1521C2CECF95D00F1A145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD1521B2CECF95D00F1A145 /* Assets.xcassets */; };
+		FBD1521F2CECF95D00F1A145 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD1521E2CECF95D00F1A145 /* Preview Assets.xcassets */; };
+		FBD152292CECF95D00F1A145 /* CompraVehiculosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD152282CECF95D00F1A145 /* CompraVehiculosTests.swift */; };
+		FBD152332CECF95D00F1A145 /* CompraVehiculosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD152322CECF95D00F1A145 /* CompraVehiculosUITests.swift */; };
+		FBD152352CECF95D00F1A145 /* CompraVehiculosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD152342CECF95D00F1A145 /* CompraVehiculosUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBD152252CECF95D00F1A145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBD1520C2CECF95B00F1A145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBD152132CECF95B00F1A145;
+			remoteInfo = CompraVehiculos;
+		};
+		FBD1522F2CECF95D00F1A145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBD1520C2CECF95B00F1A145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBD152132CECF95B00F1A145;
+			remoteInfo = CompraVehiculos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FBD152142CECF95B00F1A145 /* CompraVehiculos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompraVehiculos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD152172CECF95B00F1A145 /* CompraVehiculosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompraVehiculosApp.swift; sourceTree = "<group>"; };
+		FBD152192CECF95B00F1A145 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FBD1521B2CECF95D00F1A145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBD1521E2CECF95D00F1A145 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FBD152242CECF95D00F1A145 /* CompraVehiculosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompraVehiculosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD152282CECF95D00F1A145 /* CompraVehiculosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompraVehiculosTests.swift; sourceTree = "<group>"; };
+		FBD1522E2CECF95D00F1A145 /* CompraVehiculosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompraVehiculosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD152322CECF95D00F1A145 /* CompraVehiculosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompraVehiculosUITests.swift; sourceTree = "<group>"; };
+		FBD152342CECF95D00F1A145 /* CompraVehiculosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompraVehiculosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBD152112CECF95B00F1A145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD152212CECF95D00F1A145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD1522B2CECF95D00F1A145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBD1520B2CECF95B00F1A145 = {
+			isa = PBXGroup;
+			children = (
+				FBD152162CECF95B00F1A145 /* CompraVehiculos */,
+				FBD152272CECF95D00F1A145 /* CompraVehiculosTests */,
+				FBD152312CECF95D00F1A145 /* CompraVehiculosUITests */,
+				FBD152152CECF95B00F1A145 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBD152152CECF95B00F1A145 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBD152142CECF95B00F1A145 /* CompraVehiculos.app */,
+				FBD152242CECF95D00F1A145 /* CompraVehiculosTests.xctest */,
+				FBD1522E2CECF95D00F1A145 /* CompraVehiculosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBD152162CECF95B00F1A145 /* CompraVehiculos */ = {
+			isa = PBXGroup;
+			children = (
+				FBD152172CECF95B00F1A145 /* CompraVehiculosApp.swift */,
+				FBD152192CECF95B00F1A145 /* ContentView.swift */,
+				FBD1521B2CECF95D00F1A145 /* Assets.xcassets */,
+				FBD1521D2CECF95D00F1A145 /* Preview Content */,
+			);
+			path = CompraVehiculos;
+			sourceTree = "<group>";
+		};
+		FBD1521D2CECF95D00F1A145 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FBD1521E2CECF95D00F1A145 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FBD152272CECF95D00F1A145 /* CompraVehiculosTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBD152282CECF95D00F1A145 /* CompraVehiculosTests.swift */,
+			);
+			path = CompraVehiculosTests;
+			sourceTree = "<group>";
+		};
+		FBD152312CECF95D00F1A145 /* CompraVehiculosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FBD152322CECF95D00F1A145 /* CompraVehiculosUITests.swift */,
+				FBD152342CECF95D00F1A145 /* CompraVehiculosUITestsLaunchTests.swift */,
+			);
+			path = CompraVehiculosUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBD152132CECF95B00F1A145 /* CompraVehiculos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD152382CECF95D00F1A145 /* Build configuration list for PBXNativeTarget "CompraVehiculos" */;
+			buildPhases = (
+				FBD152102CECF95B00F1A145 /* Sources */,
+				FBD152112CECF95B00F1A145 /* Frameworks */,
+				FBD152122CECF95B00F1A145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CompraVehiculos;
+			productName = CompraVehiculos;
+			productReference = FBD152142CECF95B00F1A145 /* CompraVehiculos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBD152232CECF95D00F1A145 /* CompraVehiculosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD1523B2CECF95D00F1A145 /* Build configuration list for PBXNativeTarget "CompraVehiculosTests" */;
+			buildPhases = (
+				FBD152202CECF95D00F1A145 /* Sources */,
+				FBD152212CECF95D00F1A145 /* Frameworks */,
+				FBD152222CECF95D00F1A145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBD152262CECF95D00F1A145 /* PBXTargetDependency */,
+			);
+			name = CompraVehiculosTests;
+			productName = CompraVehiculosTests;
+			productReference = FBD152242CECF95D00F1A145 /* CompraVehiculosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FBD1522D2CECF95D00F1A145 /* CompraVehiculosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD1523E2CECF95D00F1A145 /* Build configuration list for PBXNativeTarget "CompraVehiculosUITests" */;
+			buildPhases = (
+				FBD1522A2CECF95D00F1A145 /* Sources */,
+				FBD1522B2CECF95D00F1A145 /* Frameworks */,
+				FBD1522C2CECF95D00F1A145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBD152302CECF95D00F1A145 /* PBXTargetDependency */,
+			);
+			name = CompraVehiculosUITests;
+			productName = CompraVehiculosUITests;
+			productReference = FBD1522E2CECF95D00F1A145 /* CompraVehiculosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBD1520C2CECF95B00F1A145 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					FBD152132CECF95B00F1A145 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					FBD152232CECF95D00F1A145 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = FBD152132CECF95B00F1A145;
+					};
+					FBD1522D2CECF95D00F1A145 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = FBD152132CECF95B00F1A145;
+					};
+				};
+			};
+			buildConfigurationList = FBD1520F2CECF95B00F1A145 /* Build configuration list for PBXProject "CompraVehiculos" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBD1520B2CECF95B00F1A145;
+			productRefGroup = FBD152152CECF95B00F1A145 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBD152132CECF95B00F1A145 /* CompraVehiculos */,
+				FBD152232CECF95D00F1A145 /* CompraVehiculosTests */,
+				FBD1522D2CECF95D00F1A145 /* CompraVehiculosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBD152122CECF95B00F1A145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD1521F2CECF95D00F1A145 /* Preview Assets.xcassets in Resources */,
+				FBD1521C2CECF95D00F1A145 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD152222CECF95D00F1A145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD1522C2CECF95D00F1A145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBD152102CECF95B00F1A145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD1521A2CECF95B00F1A145 /* ContentView.swift in Sources */,
+				FBD152182CECF95B00F1A145 /* CompraVehiculosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD152202CECF95D00F1A145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD152292CECF95D00F1A145 /* CompraVehiculosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBD1522A2CECF95D00F1A145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBD152332CECF95D00F1A145 /* CompraVehiculosUITests.swift in Sources */,
+				FBD152352CECF95D00F1A145 /* CompraVehiculosUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBD152262CECF95D00F1A145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBD152132CECF95B00F1A145 /* CompraVehiculos */;
+			targetProxy = FBD152252CECF95D00F1A145 /* PBXContainerItemProxy */;
+		};
+		FBD152302CECF95D00F1A145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBD152132CECF95B00F1A145 /* CompraVehiculos */;
+			targetProxy = FBD1522F2CECF95D00F1A145 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FBD152362CECF95D00F1A145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBD152372CECF95D00F1A145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBD152392CECF95D00F1A145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CompraVehiculos/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsup.CompraVehiculos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBD1523A2CECF95D00F1A145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CompraVehiculos/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsup.CompraVehiculos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FBD1523C2CECF95D00F1A145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsup.CompraVehiculosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CompraVehiculos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CompraVehiculos";
+			};
+			name = Debug;
+		};
+		FBD1523D2CECF95D00F1A145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsup.CompraVehiculosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CompraVehiculos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CompraVehiculos";
+			};
+			name = Release;
+		};
+		FBD1523F2CECF95D00F1A145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsup.CompraVehiculosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CompraVehiculos;
+			};
+			name = Debug;
+		};
+		FBD152402CECF95D00F1A145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsup.CompraVehiculosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CompraVehiculos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBD1520F2CECF95B00F1A145 /* Build configuration list for PBXProject "CompraVehiculos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD152362CECF95D00F1A145 /* Debug */,
+				FBD152372CECF95D00F1A145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD152382CECF95D00F1A145 /* Build configuration list for PBXNativeTarget "CompraVehiculos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD152392CECF95D00F1A145 /* Debug */,
+				FBD1523A2CECF95D00F1A145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD1523B2CECF95D00F1A145 /* Build configuration list for PBXNativeTarget "CompraVehiculosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD1523C2CECF95D00F1A145 /* Debug */,
+				FBD1523D2CECF95D00F1A145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD1523E2CECF95D00F1A145 /* Build configuration list for PBXNativeTarget "CompraVehiculosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBD1523F2CECF95D00F1A145 /* Debug */,
+				FBD152402CECF95D00F1A145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBD1520C2CECF95B00F1A145 /* Project object */;
+}
