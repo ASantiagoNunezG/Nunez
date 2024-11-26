@@ -5,21 +5,15 @@
 //  Created by nunez on 26/11/24.
 //
 
-//
-//  ContentView.swift
-//  CompraVehiculos
-//
-//  Created by Mac13 on 19/11/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     @State private var sueldoBruto: Double = 0.0
     @State private var tieneEPS: Bool = false
-    @State private var epsSeleccionado: String = "Essalud"
+    @State private var epsSeleccionado: String = "Essalud" // Cambiado por defecto a ESSALUD
     @State private var aportePrevisional: String = "ONP"
     @State private var ingresosExtras: Double = 0.0
+    @State private var numeroMiembros: Int = 1 // Número de miembros que se afilian
     
     @State private var sueldoNeto: Double = 0.0
     @State private var impuestoRenta: Double = 0.0
@@ -42,17 +36,33 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(.blue)
-                .padding(.top, 60)
+                .padding(.top, 70)
             
             Spacer()
             
             // Ingreso Sueldo Bruto
-            TextField("💵 Sueldo Bruto Mensual", value: $sueldoBruto, formatter: NumberFormatter())
+            Text("💵 Sueldo Bruto Mensual")
+                .fontWeight(.bold)
+                .foregroundColor(.blue)
+            TextField("Ingrese el sueldo bruto", value: $sueldoBruto, formatter: NumberFormatter())
                 .padding()
                 .keyboardType(.decimalPad)
                 .background(Color.white.opacity(0.7))
                 .cornerRadius(8)
                 .padding(.horizontal)
+            
+            // Picker para Número de Miembros
+            Text("👥 Número de miembros a afiliar al seguro")
+                .fontWeight(.bold)
+                .foregroundColor(.blue)
+            Picker("Número de Miembros", selection: $numeroMiembros) {
+                ForEach(1..<6, id: \.self) { i in
+                    Text("\(i)").tag(i)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+            .padding(.top, 10)
             
             // Toggle EPS
             Toggle(isOn: $tieneEPS) {
@@ -84,7 +94,10 @@ struct ContentView: View {
             .padding(.top, 10)
             
             // Ingreso de Horas Extras
-            TextField("⏰ Ingresos Extras", value: $ingresosExtras, formatter: NumberFormatter())
+            Text("🤑 Ingresos Extras")
+                .fontWeight(.bold)
+                .foregroundColor(.blue)
+            TextField("Ingrese los ingresos extras", value: $ingresosExtras, formatter: NumberFormatter())
                 .padding()
                 .keyboardType(.decimalPad)
                 .background(Color.white.opacity(0.7))
@@ -92,12 +105,12 @@ struct ContentView: View {
                 .padding(.horizontal)
                 .padding(.top, 10)
             
-            Button("📊 Calcular Boleta") {
+            Button("📊 Calcular") {
                 calcularBoleta()
             }
             .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
+            .background(Color.white)
+            .foregroundColor(.blue)
             .cornerRadius(10)
             .padding(.top, 15)
             
@@ -106,10 +119,10 @@ struct ContentView: View {
                 Text("📅 Sueldo Bruto: S/ \(String(format: "%.2f", sueldoBruto))")
                     .font(.headline)
                     .foregroundColor(.black)
-                Text("💼 Aporte Previsional: S/ \(String(format: "%.2f", aportePrevisionalCalculado))")
+                Text("💼 Aporte previsional: S/ \(String(format: "%.2f", aportePrevisionalCalculado))")
                     .font(.headline)
                     .foregroundColor(.black)
-                Text("💸 Impuesto a la Renta: S/ \(String(format: "%.2f", impuestoRenta))")
+                Text("💸 Impuesto a la renta: S/ \(String(format: "%.2f", impuestoRenta))")
                     .font(.headline)
                     .foregroundColor(.black)
                 Text("🏥 Descuento EPS: S/ \(String(format: "%.2f", descuentoEPS))")
@@ -118,6 +131,29 @@ struct ContentView: View {
                 Text("💰 Sueldo Neto: S/ \(String(format: "%.2f", sueldoNeto))")
                     .font(.headline)
                     .foregroundColor(.green)
+            }
+            .padding()
+            .background(Color.white.opacity(0.8))
+            .cornerRadius(10)
+            .padding(.top, 20)
+            
+            // Más Detalles
+            VStack(alignment: .leading, spacing: 8) {
+                Text("📊 Más Detalles")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                Text("🔵 Sueldo anual estimado: S/ \(String(format: "%.2f", sueldoBruto * 12))")
+                    .font(.body)
+                    .foregroundColor(.black)
+                Text("🔴 Diferencia,Sueldo B. y Sueldo N.: S/ \(String(format: "%.2f", sueldoBruto - sueldoNeto))")
+                    .font(.body)
+                    .foregroundColor(.black)
+                Text("🟢 Total anual con ingresos extras: S/ \(String(format: "%.2f", (sueldoBruto + ingresosExtras) * 12))")
+                    .font(.body)
+                    .foregroundColor(.black)
+                Text("🟡 Descuento de EPS por \(numeroMiembros) miembro(s): S/ \(String(format: "%.2f", descuentoEPS))")
+                    .font(.body)
+                    .foregroundColor(.black)
             }
             .padding()
             .background(Color.white.opacity(0.8))
@@ -175,35 +211,27 @@ struct ContentView: View {
     }
     
     func calcularDescuentoEPS() -> Double {
-        // Lógica para calcular el descuento de EPS basado en la entidad seleccionada
         var porcentajeDescuento: Double = 0.0
         
         switch epsSeleccionado {
-        case "Rímac":
-            if sueldoBruto <= 2500 {
-                porcentajeDescuento = 0.025 // 2.5% para sueldos hasta 2500
-            } else if sueldoBruto <= 5000 {
-                porcentajeDescuento = 0.035 // 3.5% para sueldos hasta 5000
-            } else {
-                porcentajeDescuento = 0.045 // 4.5% para sueldos mayores a 5000
-            }
-        case "Pacífico":
-            if sueldoBruto <= 2500 {
-                porcentajeDescuento = 0.03 // 3% para sueldos hasta 2500
-            } else if sueldoBruto <= 5000 {
-                porcentajeDescuento = 0.04 // 4% para sueldos hasta 5000
-            } else {
-                porcentajeDescuento = 0.05 // 5% para sueldos mayores a 5000
-            }
         case "Essalud":
-            porcentajeDescuento = 0.09 // Essalud generalmente es el 9% del sueldo bruto
+            // El descuento en Essalud es fijo, sin importar el sueldo
+            porcentajeDescuento = 0.09
+        case "Rímac":
+            // Supongamos que Rímac tiene un descuento del 4%
+            porcentajeDescuento = 0.04
+        case "Pacífico":
+            // Supongamos que Pacífico tiene un descuento del 3.5%
+            porcentajeDescuento = 0.035
         default:
-            break
+            porcentajeDescuento = 0.0
         }
         
-        return sueldoBruto * porcentajeDescuento
+        // Aplicar descuento por número de miembros
+        return sueldoBruto * porcentajeDescuento * Double(numeroMiembros)
     }
 }
+
 
 #Preview {
     ContentView()
