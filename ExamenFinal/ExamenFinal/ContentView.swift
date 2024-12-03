@@ -18,19 +18,25 @@ struct LoginView: View {
         NavigationView {
             VStack(spacing: 20) {
                 Text("Iniciar Sesión")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .font(.custom("Courier New", size: 36))  // Tipografía retro tipo máquina de escribir
+                    .foregroundColor(Color.white)
+                    .padding(.bottom, 20)
                 
                 TextField("Correo electrónico", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
                     .keyboardType(.emailAddress)
                     .padding()
+                    .background(Color.white.opacity(0.7))  // Fondo retro
+                    .cornerRadius(10)
+                    .foregroundColor(Color.gray)
                 
                 SecureField("Contraseña", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .background(Color.white.opacity(0.7))
+                    .cornerRadius(10)
+                    .foregroundColor(Color.gray)
                 
                 Button(action: {
                     if email == "abraham@gmail.com" && password == "12345" {
@@ -41,11 +47,12 @@ struct LoginView: View {
                 }) {
                     Text("Iniciar Sesión")
                         .padding()
-                        
+                        .font(.title3)
                         .foregroundColor(.white)
-                        .cornerRadius(20)
-                } .background(Color.green)
-                    .cornerRadius(10)
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                }
+                
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Error"), message: Text("Correo o contraseña incorrectos"), dismissButton: .default(Text("OK")))
                 }
@@ -53,56 +60,78 @@ struct LoginView: View {
                 NavigationLink(destination: OptionsView(), isActive: $isLoggedIn) {
                     EmptyView()
                 }
+                
                 Text("TECSUP, By Nuñez")
+                    .font(.footnote)
+                    .foregroundColor(Color.white)
+                    .padding(.top, 20)
             }
             .padding()
+            .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.6), Color.orange.opacity(0.4)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+            .cornerRadius(20)
+            .shadow(radius: 10)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
-//pantalla de seleccion de opciones
+
+
 struct OptionsView: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("Selecciona una opción: 😊")
-                .font(.title)
+                .font(.custom("Courier New", size: 30))  // Tipografía retro
+                .foregroundColor(Color.white)
                 .padding()
             
+            // Botón de Repsol
             NavigationLink(destination: RepsolFormView()) {
                 Text("Repsol")
                     .padding()
-                    .background(Color.green)
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .background(Color.green.opacity(0.8))  // Color retro con opacidad
+                    .cornerRadius(12)
             }
             
+            // Botón de BBVA
             NavigationLink(destination: BBVAFormView()) {
                 Text("BBVA")
                     .padding()
-                    .background(Color.blue)
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .background(Color.blue.opacity(0.8))
+                    .cornerRadius(12)
             }
             
+            // Botón de Banco de Crédito
             NavigationLink(destination: BCPFormView()) {
                 Text("Banco de Crédito")
                     .padding()
-                    .background(Color.orange)
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .background(Color.orange.opacity(0.8))
+                    .cornerRadius(12)
             }
             
+            // Botón de Beca 18
             NavigationLink(destination: Beca18FormView()) {
                 Text("Beca 18")
                     .padding()
-                    .background(Color.red)
+                    .font(.title2)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .background(Color.red.opacity(0.8))
+                    .cornerRadius(12)
             }
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
-//otra pantalla de seleccion
+
+// Pantalla de formulario de Repsol
 struct RepsolFormView: View {
     @State private var dni: String = ""
     @State private var isWorker: Bool = false
@@ -114,9 +143,14 @@ struct RepsolFormView: View {
             TextField("DNI", text: $dni)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
+                .padding()
+                .background(Color.white.opacity(0.2)) // Fondo con opacidad para estilo retro
+                .cornerRadius(10)
             
             Toggle("¿Eres trabajador?", isOn: $isWorker)
                 .padding()
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(10)
             
             Picker("Selecciona una carrera", selection: $selectedDepartment) {
                 Text("Redes y Comunicaciones").tag("Redes y Comunicaciones")
@@ -124,21 +158,26 @@ struct RepsolFormView: View {
                 Text("Química").tag("Química")
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding()
             
             NavigationLink(destination: RepsolResultView(dni: dni, isWorker: isWorker, department: selectedDepartment), isActive: $navigateToResult) {
                 Button("Continuar") {
                     navigateToResult = true
                 }
                 .padding()
-                .background(Color.blue)
+                .background(Color.green.opacity(0.8))  // Color retro lofi
                 .foregroundColor(.white)
-                .cornerRadius(10)
+                .cornerRadius(12)
             }
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
-//otra pantalla
+
+// Pantalla de resultados de Repsol
 struct RepsolResultView: View {
     let dni: String
     let isWorker: Bool
@@ -161,15 +200,30 @@ struct RepsolResultView: View {
         
         VStack(spacing: 20) {
             Text("Resultados para DNI: \(dni)")
+                .font(.custom("Courier New", size: 24))  // Tipografía retro
+                .foregroundColor(.white)
             Text("Carrera: \(department)")
-            Text("Cobertura: \(coverage)%").foregroundColor(.green)
+                .font(.custom("Courier New", size: 24))
+                .foregroundColor(.white)
+            Text("Cobertura: \(coverage)%")
+                .foregroundColor(.green)
+                .font(.custom("Courier New", size: 24))
             Text("Monto cubierto: S/ \(coveredAmount)")
-            Text("Monto no cubierto: S/ \(uncoveredAmount)").foregroundColor(.red)
+                .foregroundColor(.white)
+                .font(.custom("Courier New", size: 24))
+            Text("Monto no cubierto: S/ \(uncoveredAmount)")
+                .foregroundColor(.red)
+                .font(.custom("Courier New", size: 24))
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
+
 //--------------------------
+// Pantalla de formulario BBVA
 struct BBVAFormView: View {
     @State private var dni: String = ""
     @State private var isWorker: Bool = false
@@ -182,9 +236,14 @@ struct BBVAFormView: View {
             TextField("DNI", text: $dni)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
+                .padding()
+                .background(Color.white.opacity(0.2))  // Fondo retro con opacidad
+                .cornerRadius(10)
             
             Toggle("¿Eres trabajador?", isOn: $isWorker)
                 .padding()
+                .background(Color.white.opacity(0.2))  // Fondo retro con opacidad
+                .cornerRadius(10)
             
             Picker("Selecciona una carrera", selection: $selectedDepartment) {
                 Text("Big Data").tag("Big Data")
@@ -192,8 +251,9 @@ struct BBVAFormView: View {
                 Text("Aviónica").tag("Aviónica")
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding()
             .onChange(of: selectedDepartment) { newValue in
-                // Si selecciona "Modelado", mostrar opción de duración.
+                // Si selecciona "Modelado", mostrar opción de duración
                 if newValue == "Modelado" {
                     modeladoYears = 2
                 }
@@ -205,6 +265,7 @@ struct BBVAFormView: View {
                     Text("3 años").tag(3)
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                .padding()
             }
             
             NavigationLink(destination: BBVAResultView(dni: dni, department: selectedDepartment, years: modeladoYears), isActive: $navigateToResult) {
@@ -212,19 +273,23 @@ struct BBVAFormView: View {
                     navigateToResult = true
                 }
                 .padding()
-                .background(Color.blue)
+                .background(Color.blue.opacity(0.8))  // Color retro lofi
                 .foregroundColor(.white)
-                .cornerRadius(10)
+                .cornerRadius(12)
             }
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
-//Resultados
+
+// Pantalla de resultados BBVA
 struct BBVAResultView: View {
     let dni: String
     let department: String
-    let years: Int // Solo relevante para "Modelado"
+    let years: Int  // Solo relevante para "Modelado"
     
     var coverage: Int {
         switch department {
@@ -247,15 +312,30 @@ struct BBVAResultView: View {
         
         VStack(spacing: 20) {
             Text("Resultados para DNI: \(dni)")
+                .font(.custom("Courier New", size: 24))  // Tipografía retro
+                .foregroundColor(.white)
             Text("Carrera: \(department)")
-            Text("Cobertura: \(coverage)%").foregroundColor(.green)
+                .font(.custom("Courier New", size: 24))
+                .foregroundColor(.white)
+            Text("Cobertura: \(coverage)%")
+                .foregroundColor(.green)
+                .font(.custom("Courier New", size: 24))
             Text("Monto cubierto: S/ \(coveredAmount)")
-            Text("Monto no cubierto: S/ \(uncoveredAmount)").foregroundColor(.red)
+                .foregroundColor(.white)
+                .font(.custom("Courier New", size: 24))
+            Text("Monto no cubierto: S/ \(uncoveredAmount)")
+                .foregroundColor(.red)
+                .font(.custom("Courier New", size: 24))
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
+
 //----------------------------
+// Pantalla de formulario BCP
 struct BCPFormView: View {
     @State private var dni: String = ""
     @State private var isWorker: Bool = false
@@ -272,12 +352,21 @@ struct BCPFormView: View {
                     // Limitar a números con un máximo de 8 caracteres
                     dni = String(newValue.prefix(8))
                 }
+                .padding()
+                .background(Color.white.opacity(0.2))  // Fondo retro con opacidad
+                .cornerRadius(10)
+            
             Toggle("¿Eres trabajador?", isOn: $isWorker)
                 .padding()
+                .background(Color.white.opacity(0.2))  // Fondo retro con opacidad
+                .cornerRadius(10)
             
             TextField("Promedio final", text: $finalAverage)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.decimalPad)
+                .padding()
+                .background(Color.white.opacity(0.2))  // Fondo retro con opacidad
+                .cornerRadius(10)
             
             Picker("Selecciona una carrera", selection: $selectedDepartment) {
                 Text("Mecánica").tag("Mecánica")
@@ -285,6 +374,7 @@ struct BCPFormView: View {
                 Text("Electrónica").tag("Electrónica")
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding()
             
             if let average = Double(finalAverage), average >= 0 && average <= 20 {
                 NavigationLink(
@@ -299,9 +389,9 @@ struct BCPFormView: View {
                         navigateToResult = true
                     }
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.blue.opacity(0.8))  // Color retro lofi
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .cornerRadius(12)
                 }
             } else {
                 Text("Ingresa un promedio válido entre 0 y 20")
@@ -309,11 +399,13 @@ struct BCPFormView: View {
             }
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
 
-
-//Rsultados de BCP
+// Pantalla de resultados BCP
 struct BCPResultView: View {
     let dni: String
     let department: String
@@ -346,24 +438,38 @@ struct BCPResultView: View {
         
         VStack(spacing: 20) {
             Text("Resultados para DNI: \(dni)")
-                .font(.title2)
+                .font(.custom("Courier New", size: 24))  // Tipografía retro
+                .foregroundColor(.white)
             Text("Carrera: \(department)")
+                .font(.custom("Courier New", size: 24))
+                .foregroundColor(.white)
             Text("Promedio final: \(String(format: "%.2f", finalAverage))")
+                .font(.custom("Courier New", size: 24))
+                .foregroundColor(.white)
             Text("Cobertura: \(coverage)%")
                 .foregroundColor(coverage > 0 ? .green : .red)
+                .font(.custom("Courier New", size: 24))
             
             if coverage > 0 {
                 Text("Monto cubierto: S/ \(coveredAmount)")
+                    .foregroundColor(.white)
+                    .font(.custom("Courier New", size: 24))
                 Text("Monto no cubierto: S/ \(uncoveredAmount)")
                     .foregroundColor(.red)
+                    .font(.custom("Courier New", size: 24))
             } else {
                 Text("No cumple con los requisitos para obtener cobertura")
                     .foregroundColor(.red)
+                    .font(.custom("Courier New", size: 24))
             }
         }
         .padding()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pink.opacity(0.7), Color.orange.opacity(0.5)]), startPoint: .top, endPoint: .bottom))  // Fondo retro lofi
+        .cornerRadius(20)
+        .shadow(radius: 10)
     }
 }
+
 
 //------------
 struct Beca18FormView: View {
@@ -379,12 +485,22 @@ struct Beca18FormView: View {
     var body: some View {
         VStack(spacing: 20) {
             TextField("Nombres", text: $name)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 2)
             
             TextField("Apellidos", text: $lastName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 2)
             
             DatePicker("Fecha de nacimiento", selection: $birthDate, displayedComponents: .date)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 2)
                 .onChange(of: birthDate) { _ in
                     let calendar = Calendar.current
                     let currentDate = Date()
@@ -393,11 +509,17 @@ struct Beca18FormView: View {
                 }
             
             TextField("DNI", text: $dni)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 2)
                 .keyboardType(.numberPad)
             
             TextField("Promedio final", text: $finalAverage)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 2)
                 .keyboardType(.decimalPad)
             
             Picker("Selecciona una carrera", selection: $department) {
@@ -406,6 +528,7 @@ struct Beca18FormView: View {
                 Text("Química").tag("Química")
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding()
             
             if age >= 16 {
                 NavigationLink(
@@ -425,17 +548,23 @@ struct Beca18FormView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .shadow(radius: 2)
                 }
             } else {
                 Text("Debes tener al menos 16 años para aplicar a Beca 18")
                     .foregroundColor(.red)
+                    .font(.subheadline)
             }
         }
         .padding()
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(10)
+        .shadow(radius: 5)
     }
 }
 
-//Resultados de beca 18
+
+
 struct Beca18ResultView: View {
     let dni: String
     let fullName: String
@@ -480,8 +609,12 @@ struct Beca18ResultView: View {
             }
         }
         .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
     }
 }
+
 
 #Preview {
     LoginView()
